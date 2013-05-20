@@ -7,9 +7,6 @@
 //global Variables
 var petShop = "Dogs Haven";
 var dogName = "\"Benny\"";
-//var dogBreed = ["Beagle", "Mastiff", "Bulldog", "Pitbull", "Collie"];
-//var dogBreedAmount = [2, 4, 2, 1, 1];
-//var dogAge = [3, 7, 1, 2, 2];
 var ladyConversationOne = "Hello Sir, how may i help you? ";
 var ladyConversationTwo = "Great we have a nice selection of pure breed dogs to chose from. ";
 
@@ -19,8 +16,6 @@ var dogs = {
 	dogBreed: ["Beagle", "Mastiff", "Bulldog", "Pitbull", "Collie"],
 	dogBreedAmount: [2, 4, 2, 1, 1],
 	dogAge: [3, 7, 1, 2, 2],
-	
-	//object function
 };
 
 ///////////////////////////////// End Objects ///////////////////////////////////
