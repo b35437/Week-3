@@ -1,5 +1,5 @@
 //Name: nathan byarley
-//Date:
+//Date: 23 May 2013
 //Term: 1305
 //Assignment: Week 3 Project
 //Description: Story continuation from week 1 & 2 projects.
@@ -10,13 +10,15 @@ var petShop = "Dogs Haven";
 var dogName = "\"Benny\"";
 var dogShots = true;
 var dogTreatment = true;
-var play = 1045;
+//var newDogs;
+var play;
 var ladyConversationOne = "Hello Sir, how may i help you? ";
 var ladyConversationTwo = "Great we have a nice selection of pure breed dogs to chose from. ";
 
 
 ///////////////////////////////// Start Objects ///////////////////////////////////
 
+//dogs object
 var dogs = {
 	dogBreedNotAvailable: ["Mastiff", "\nPitbull"],
 	availableBreed: ["\nBulldog", "\nCollie", "\nBeagle",],
@@ -24,6 +26,7 @@ var dogs = {
 	playChoice: "Bulldog",
 	dogBreedPrice: 350,
 	
+	//function within dogs object
 	grooming: function(groomed) {
 		console.log("The following list of dogs are unavailable due to being groomed\n" + groomed);
 	}
@@ -97,20 +100,16 @@ var playDogs = function(dogs) {
 
 // function for playing with dog
 var dogPlayFetch = function (play) {
-	var stopPlay = 1100;
-	var count = 0;
+	var toss = 1;
+	var fetch = 1;
 	
-	//while loop for times i tossed the ball
-	//based on the allotted time
-	while(play < stopPlay) {
-		play += 5;
-		count++;
-		if (play < stopPlay) {
-			console.log("Tossed the ball " + count + " time");
-		} else {
-			//return the number
-			return count;
-		};
+	//while loop with nested while loop
+	while (toss <= 1) {
+		while (fetch <= 5) {
+			console.log("i tossed the ball " + fetch + " time and he fetched it " + (toss * fetch) + " time ");
+			fetch++
+		}
+		toss++
 	}
 }
 
@@ -121,6 +120,7 @@ var buyDog = function (allDogBreeds) {
 	var myMoney = 500;
 	var tax = .05;
 	var dogPrice = 350;
+	//math
 	var grandTotal = 500 - (350*0.05);
 	
 	console.log("Do you have an idea of what dog you may be interested in? ");
@@ -137,6 +137,7 @@ var buyDog = function (allDogBreeds) {
 	//return array
 	return allDogBreeds;
 }
+
 
 ///////////////////////////////// End Functions ///////////////////////////////////
 
@@ -170,7 +171,7 @@ dogs.grooming(dogs.dogBreedNotAvailable);
 
 console.log(" "); //spacer
 //pick the dog u wish to play fetch with
-playDogs(dogs)
+playDogs(dogs);
 
 console.log(" "); //spacer
 
