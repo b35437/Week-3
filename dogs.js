@@ -5,13 +5,33 @@
 //Description: Story continuation from week 1 & 2 projects.
 
 //global Variables
+var allDogBreeds = ["Beagle", "Mastiff", "Bulldog", "Pitbull", "Collie"];
+//var dogBreedPrice = [250, 400, 350, 650, 420];
 var petShop = "Dogs Haven";
 var dogName = "\"Benny\"";
 var dogShots = true;
-var dogGroom = true;
-var grooming;
+var dogTreatment = true;
+var play = 1045;
 var ladyConversationOne = "Hello Sir, how may i help you? ";
 var ladyConversationTwo = "Great we have a nice selection of pure breed dogs to chose from. ";
+
+
+///////////////////////////////// Start Objects ///////////////////////////////////
+
+var dogs = {
+	dogBreedNotAvailable: ["Mastiff", "\nPitbull"],
+	availableBreed: ["\nBulldog", "\nCollie", "\nBeagle",],
+	playWithDog: true,
+	playChoice: "Bulldog",
+	dogBreedPrice: 350,
+	
+	grooming: function(groomed) {
+		console.log("The following list of dogs are unavailable due to being groomed\n" + groomed);
+	}
+}
+
+
+///////////////////////////////// End Objects ///////////////////////////////////
 
 
 ///////////////////////////////// Start Functions ///////////////////////////////////
@@ -35,11 +55,10 @@ var dogList = function (dogListJson) {
 };
 
 //do the dogs have their shots
-//pull information from dogs object
-var dogsHealthy = function(dogGroom, dogShots) {
+var dogsHealthy = function(dogTreatment, dogShots) {
 	var statement;
 	
-	if (dogGroom === true && dogShots === true) {
+	if (dogTreatment === true && dogShots === true) {
 		console.log("Yes the dogs are up to date on all their shots. ");
 		statement = true;
 			
@@ -50,27 +69,63 @@ var dogsHealthy = function(dogGroom, dogShots) {
 	return statement;
 };
 
-
-///////////////////////////////// End Functions ///////////////////////////////////
-
-///////////////////////////////// Start Objects ///////////////////////////////////
-
-var dogs = {
-	dogBreed: ["Beagle", "\nMastiff", "\nBulldog"],
-	totalBreed: ["Beagle", "Mastiff", "Bulldog", "Pitbull", "Collie"],
-	dogBreedAmount: [2, 4, 2, 1, 1],
+//function on getting a dog to play
+//information pulled from dogs object
+var playDogs = function(dogs) {
+	var availableToPlay = dogs.availableBreed;
+	var notAvailable = dogs.dogBreedNotAvailable;
+	var choiceToPlay = dogs.playChoice;
+	var playFetch = dogs.playWithDog;
 	
-	grooming: function(groomed) {
-		console.log("The following list of dogs are unavailable due to being groomed\n" + groomed);
+	
+	if(choiceToPlay === "Bulldog") {
+		console.log("You are now ready to start playing with the " + choiceToPlay);
+		console.log("Here is his favorite ball, he loves to play fetch");
+		
+		dogPlayFetch(play);
+
+	} else if (choiceToPlay === "Mastiff" || choiceToPlay === "Pitbull") {
+		console.log("I am sorry These are unavailable to play " + notAvailable);
+	} else {
+		console.log("The following Dogs are available to play " + availableToPlay);
+	};
+}
+
+// function for playing with dog
+var dogPlayFetch = function (play) {
+	var stopPlay = 1100;
+	var count = 0;
+	
+	while(play < stopPlay) {
+		play += 5;
+		count++;
+		if (play < stopPlay) {
+			console.log("Tossed the ball " + count + " time");
+		} else {
+			return count;
+		};
 	}
 }
 
-///////////////////////////////// End Objects ///////////////////////////////////
+// all dogs are ready to buy
+//are you interested in one
+var buyDog = function (allDogBreeds) {
+	//var dogRandom = allDogBreeds;
+	//allDogBreeds.random();
+	console.log("Do you have an idea of what dog you may be interested in? ");
+	console.log("Yes Ma'am, i am going to go with the");
+	console.log(allDogBreeds[2]);
+	
+	return allDogBreeds;
+}
+
+///////////////////////////////// End Functions ///////////////////////////////////
 
 
 ///////////////////////////////// Start Output ///////////////////////////////////
 console.log("Welcome to " + petShop);
 console.log(" "); //spacer
+//talkingLady string
 console.log(talkingToLady(ladyConversationOne, ladyConversationTwo));
 
 console.log(" "); //spacer
@@ -81,14 +136,20 @@ dogList(dogListJson)
 
 console.log(" "); //spacer
 
-//calling function dogsHealthy
+//calling function dogsHealthy-boolean
 console.log("Have the dogs had their shots up to date?");
-
-dogsHealthy(dogGroom, dogShots)
+dogsHealthy(dogTreatment, dogShots)
 console.log(" "); //spacer
 
 //calling object function
 //list of dogs being groomed
-dogs.grooming(dogs.dogBreed);
+//calles the function within the object.
+dogs.grooming(dogs.dogBreedNotAvailable);
+
+//pick the dog u wish to play fetch with
+playDogs(dogs)
+console.log(" ");
+
+buyDog(allDogBreeds);
 
 ///////////////////////////////// End Output ///////////////////////////////////
