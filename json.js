@@ -1,6 +1,7 @@
-
-
-
+//Name: nathan byarley
+//Date: 23 May 2013
+//Term: 1305
+//Assignment: Week 3 Project
 
 
 var dogListJson = {
