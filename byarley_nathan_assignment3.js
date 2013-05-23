@@ -10,7 +10,6 @@ var petShop = "Dogs Haven";
 var dogName = "\"Benny\"";
 var dogShots = true;
 var dogTreatment = true;
-//var newDogs;
 var play;
 var ladyConversationOne = "Hello Sir, how may i help you? ";
 var ladyConversationTwo = "Great we have a nice selection of pure breed dogs to chose from. ";
@@ -155,7 +154,7 @@ console.log(" "); //spacer
 
 //Json Data output
 console.log("Here is our current Dog Listing: ");
-dogList(dogListJson)
+dogList(dogListJson);
 
 console.log(" "); //spacer
 
@@ -180,6 +179,6 @@ buyDog(allDogBreeds);
 
 //got the god of my choice, output his name
 console.log("Ok sir now for his certificate what name would you like to put on it?");
-console.log("Ma'am i would like his name to be " + dogName);
+console.log("I would like his name to be " + dogName);
 
 ///////////////////////////////// End Output ///////////////////////////////////
